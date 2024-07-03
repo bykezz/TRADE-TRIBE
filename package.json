@@ -9,13 +9,24 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~50.0.7",
-    "expo-status-bar": "~1.11.1",
+    "@expo/metro-runtime": "~3.2.1",
+    "@react-native-community/hooks": "^3.0.0",
+    "expo": "^51.0.17",
+    "expo-app-loading": "^2.1.1",
+    "expo-constants": "^16.0.2",
+    "expo-font": "~12.0.7",
+    "expo-status-bar": "~1.12.1",
+    "expo-updates": "~0.25.18",
+    "formik": "^2.1.4",
     "react": "18.2.0",
-    "react-native": "0.73.4"
+    "react-dom": "18.2.0",
+    "react-native": "0.74.2",
+    "react-native-gesture-handler": "~2.16.1",
+    "react-native-web": "~0.19.6",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.24.0"
   },
   "private": true
 }
