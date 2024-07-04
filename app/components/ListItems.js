@@ -24,7 +24,7 @@ function ListItems({
               {title}
             </AppText>
             {subTitle && (
-              <AppText NumberOfLines={1} style={styles.subTitle}>
+              <AppText NumberOfLines={2} style={styles.subTitle}>
                 {subTitle}
               </AppText>
             )}
