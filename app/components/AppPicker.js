@@ -11,6 +11,7 @@ import PickerItem from "./PickerItem";
 function AppPicker({
   placeholder,
   items,
+  numberOfColumns = 1,
   PickerItemComponent = PickerItem,
   width = "100%",
   icon,
@@ -47,10 +48,13 @@ function AppPicker({
       <Modal visible={modalVisible} animationType="slide">
         <Button title="Close" onPress={() => setModalVisible(false)} />
         <FlatList
+          key={numberOfColumns}
           data={items}
           keyExtractor={(item) => item.value.toString()}
+          numColumns={numberOfColumns}
           renderItem={({ item }) => (
             <PickerItemComponent
+              item={item}
               label={item.label}
               onPress={() => {
                 setModalVisible(false);
