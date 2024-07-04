@@ -20,6 +20,7 @@ import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
+import ListItemSeperator from "./app/components/ListItemSeperator";
 
 export default function App() {
   // async function onFetchUpdateAsync() {
@@ -40,7 +41,19 @@ export default function App() {
   // }, []);
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <ListingEditScreen />
+      <Screen>
+        <ListItems
+          title="Title"
+          subTitle="Subtitle"
+          image={require("./app/assets/profilePhoto.png")}
+        />
+        <ListItemSeperator />
+        <ListItems
+          title="Title"
+          subTitle="Subtitle"
+          image={require("./app/assets/profilePhoto.png")}
+        />
+      </Screen>
     </GestureHandlerRootView>
   );
 }
