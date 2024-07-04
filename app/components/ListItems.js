@@ -20,11 +20,11 @@ function ListItems({
           {IconComponent}
           {image && <Image style={styles.image} source={image} />}
           <View style={styles.detailsContainer}>
-            <AppText NumberOfLines={1} style={styles.title}>
+            <AppText numberOfLines={1} style={styles.title}>
               {title}
             </AppText>
             {subTitle && (
-              <AppText NumberOfLines={2} style={styles.subTitle}>
+              <AppText numberOfLines={2} style={styles.subTitle}>
                 {subTitle}
               </AppText>
             )}

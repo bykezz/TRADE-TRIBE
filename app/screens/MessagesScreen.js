@@ -9,13 +9,15 @@ const initialMessages = [
   {
     id: 1,
     title: "T1",
-    description: "D1",
+    description:
+      "Enhanced security features and a robust rating system build trust between users, ensuring a safe trading environment.",
     image: require("../assets/profilePhoto.png"),
   },
   {
     id: 2,
     title: "T2",
-    description: "D2",
+    description:
+      "Enhanced security features and a robust rating system build trust between users, ensuring a safe trading environment.",
     image: require("../assets/profilePhoto.png"),
   },
 ];

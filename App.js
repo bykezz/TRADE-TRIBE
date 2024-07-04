@@ -41,19 +41,7 @@ export default function App() {
   // }, []);
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Screen>
-        <ListItems
-          title="Title"
-          subTitle="Subtitle"
-          image={require("./app/assets/profilePhoto.png")}
-        />
-        <ListItemSeperator />
-        <ListItems
-          title="Title"
-          subTitle="Subtitle"
-          image={require("./app/assets/profilePhoto.png")}
-        />
-      </Screen>
+      <MessagesScreen />
     </GestureHandlerRootView>
   );
 }
