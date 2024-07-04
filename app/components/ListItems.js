@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     color: colors.medium,
+    fontWeight: "200",
   },
   title: {
     fontWeight: "900",
