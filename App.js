@@ -23,19 +23,11 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 import ListItemSeperator from "./app/components/ListItemSeperator";
 import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
+import ImageInput from "./app/components/ImageInput";
 
 export default function App() {
   const [imageUri, setImageUri] = useState();
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.canceled) setImageUri(result.assets[0].uri);
-      console.log(result.assets[0].uri);
-    } catch (error) {
-      console.log("Error reading image", error);
-    }
-  };
-  useEffect(() => {}, []);
+
   // async function onFetchUpdateAsync() {
   //   try {
   //     const update = await Updates.checkForUpdateAsync();
@@ -55,8 +47,10 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Screen>
-        <Button title="Select Image" onPress={selectImage} />
-        <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
+        <ImageInput
+          imageUri={imageUri}
+          onChangeImage={(uri) => setImageUri(uri)}
+        />
       </Screen>
     </GestureHandlerRootView>
   );
