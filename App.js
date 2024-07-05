@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { Text, View } from "react-native";
+import { Button, Image, Text, View } from "react-native";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import * as Updates from "expo-updates";
 import { useEffect } from "react";
@@ -22,17 +22,20 @@ import LoginScreen from "./app/screens/LoginScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
 import ListItemSeperator from "./app/components/ListItemSeperator";
 import * as ImagePicker from "expo-image-picker";
+import * as Permissions from "expo-permissions";
 
 export default function App() {
-  const requestPermission = async () => {
-    const result = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    console.log(result.canceled);
-    if (!result.granted)
-      alert("You need to enable permission to access the library.");
+  const [imageUri, setImageUri] = useState();
+  const selectImage = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+      if (!result.canceled) setImageUri(result.assets[0].uri);
+      console.log(result.assets[0].uri);
+    } catch (error) {
+      console.log("Error reading image", error);
+    }
   };
-  useEffect(() => {
-    requestPermission();
-  }, []);
+  useEffect(() => {}, []);
   // async function onFetchUpdateAsync() {
   //   try {
   //     const update = await Updates.checkForUpdateAsync();
@@ -51,7 +54,10 @@ export default function App() {
   // }, []);
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Screen></Screen>
+      <Screen>
+        <Button title="Select Image" onPress={selectImage} />
+        <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
+      </Screen>
     </GestureHandlerRootView>
   );
 }
