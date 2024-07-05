@@ -25,7 +25,8 @@
     "react-native": "0.74.2",
     "react-native-gesture-handler": "~2.16.1",
     "react-native-web": "~0.19.6",
-    "yup": "^1.4.0"
+    "yup": "^1.4.0",
+    "expo-location": "~17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0"
