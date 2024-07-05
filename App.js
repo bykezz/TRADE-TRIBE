@@ -21,8 +21,20 @@ import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
 import ListItemSeperator from "./app/components/ListItemSeperator";
+import * as ImagePicker from "expo-image-picker";
 
 export default function App() {
+  const requestPermission = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      quality: 1,
+    });
+    console.log(result.canceled);
+    if (!granted) alert("You need to enable permission to access the library.");
+  };
+  useEffect(() => {
+    requestPermission();
+  }, []);
   // async function onFetchUpdateAsync() {
   //   try {
   //     const update = await Updates.checkForUpdateAsync();
@@ -41,7 +53,7 @@ export default function App() {
   // }, []);
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <ListingEditScreen />
+      <Screen></Screen>
     </GestureHandlerRootView>
   );
 }
