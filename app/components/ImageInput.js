@@ -11,9 +11,9 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 
 function ImageInput({ imageUri, onChangeImage }) {
-  useEffect(() => {
-    requestPermission();
-  }, []);
+  //   useEffect(() => {
+  //     requestPermission();
+  //   }, []);
   const requestPermission = async () => {
     const { granted } = await Image.Picker.requestMediaLibraryPermission();
     if (!granted) alert("You need to enable permission to access the library");
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: "100%",
+    padding: 15,
   },
 });
 
