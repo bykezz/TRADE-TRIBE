@@ -45,21 +45,10 @@ export default function App() {
   // useEffect(() => {
   //   onFetchUpdateAsync();
   // }, []);
-  const handleAdd = (uri) => {
-    setImageUris([...imageUris, uri]);
-  };
-  const handleRemove = (uri) => {
-    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
-  };
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Screen>
-        <ImageInputList
-          imageUris={imageUris}
-          onAddImage={handleAdd}
-          onRemoveImage={handleRemove}
-        />
-      </Screen>
+      <ListingEditScreen />
     </GestureHandlerRootView>
   );
 }
