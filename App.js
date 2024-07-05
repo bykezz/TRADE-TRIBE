@@ -25,12 +25,10 @@ import * as ImagePicker from "expo-image-picker";
 
 export default function App() {
   const requestPermission = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: true,
-      quality: 1,
-    });
+    const result = await ImagePicker.requestMediaLibraryPermissionsAsync();
     console.log(result.canceled);
-    if (!granted) alert("You need to enable permission to access the library.");
+    if (!result.granted)
+      alert("You need to enable permission to access the library.");
   };
   useEffect(() => {
     requestPermission();
