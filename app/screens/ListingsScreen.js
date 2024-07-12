@@ -21,7 +21,7 @@ const Listings = [
 ];
 function ListingsScreen({ navigation }) {
   return (
-    <View style={styles.screen}>
+    <Screen style={styles.screen}>
       <FlatList
         data={Listings}
         keyExtractor={(listing) => listing.id.toString()}
@@ -34,14 +34,13 @@ function ListingsScreen({ navigation }) {
           />
         )}
       />
-    </View>
+    </Screen>
   );
 }
 const styles = StyleSheet.create({
   screen: {
     padding: 20,
     backgroundColor: colors.light,
-    flex: 1,
   },
 });
 export default ListingsScreen;
