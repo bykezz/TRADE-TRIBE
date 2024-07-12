@@ -25,6 +25,8 @@ import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
 import ImageInput from "./app/components/ImageInput";
 import ImageInputList from "./app/components/ImageInputList";
+import { NavigationContainer } from "@react-navigation/native";
+import AuthNavigator from "./app/navigation/AuthNavigator";
 
 export default function App() {
   const [imageUris, setImageUris] = useState([]);
@@ -47,8 +49,10 @@ export default function App() {
   // }, []);
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <ListingEditScreen />
-    </GestureHandlerRootView>
+    <NavigationContainer>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <AuthNavigator />
+      </GestureHandlerRootView>
+    </NavigationContainer>
   );
 }
