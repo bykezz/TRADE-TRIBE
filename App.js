@@ -27,6 +27,8 @@ import ImageInput from "./app/components/ImageInput";
 import ImageInputList from "./app/components/ImageInputList";
 import { NavigationContainer } from "@react-navigation/native";
 import AuthNavigator from "./app/navigation/AuthNavigator";
+import navigationTheme from "./app/navigation/navigationTheme";
+import AppNavigator from "./app/navigation/AppNavigator";
 
 export default function App() {
   const [imageUris, setImageUris] = useState([]);
@@ -49,9 +51,9 @@ export default function App() {
   // }, []);
 
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={navigationTheme}>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <AuthNavigator />
+        <AppNavigator />
       </GestureHandlerRootView>
     </NavigationContainer>
   );

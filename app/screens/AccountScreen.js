@@ -24,7 +24,7 @@ const menuItems = [
 ];
 function AccountScreen(props) {
   return (
-    <Screen style={styles.screen}>
+    <View style={styles.screen}>
       <View style={styles.container}>
         <ListItems
           title="Pascal Ugwu"
@@ -54,7 +54,7 @@ function AccountScreen(props) {
         title="Log Out"
         IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
       />
-    </Screen>
+    </View>
   );
 }
 const styles = StyleSheet.create({
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
   },
   screen: {
     backgroundColor: colors.light,
+    flex: 1,
   },
 });
 export default AccountScreen;
